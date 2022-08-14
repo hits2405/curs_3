@@ -31,9 +31,9 @@
       </form>
     </div>
 
-
+    {% for post in posts %}
     <section class="items">
-      {% for post in posts %}
+
       <div class="items__item item">
         <div class="item__top">
           <a href="/users/{{ post.poster_name }}" class="item__head">
@@ -54,14 +54,13 @@
           </div>
         </div>
         <div class="item__post-bottom">
-          <a href="/post/{{ post.pk }}" class="item__btn-more">Подробнее</a>
+          <a href="/posts/{{ post.pk }}" class="item__btn-more">Подробнее</a>
           <button type="button" class="item__bookmark-btn">
             <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
-      {% endfor %}
-     </section>
-
+    </section>
+    {% endfor %}
   </main>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="skyprogram" viewbox="0 0 177 26" fill="none" width="177" height="26">
